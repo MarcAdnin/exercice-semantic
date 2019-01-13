@@ -19,6 +19,7 @@
         rel="stylesheet"
         href="semantic/dist/semantic.min.css"
     ></link>
+
     <link
         rel="stylesheet"
         href="code.css"
@@ -29,135 +30,160 @@
     <div class="ui container fluid">
         <div class="ui padded grid centered">
             <div class="ten wide middle aligned">
-        <h1>Trouvez une infirmière à domicile</h1>
-        <div class="accueil">
-        <h2 class="ui medium header">Connaissez-vous le nom d'un infirmier ?</h2>
-        <button class="ui inverted blue button oui">Oui</button>
-        <button class="ui inverted blue button non">Non</button>
-        </div>
+                <h1>
+                    Trouvez une infirmière à domicile
+                </h1>
 
-        <div class="ui form connu">
-            <h2 class="ui medium header">Entrez son nom ou son prénom et laissez-vous guider...</h2>
-            <div class="field">
-                <div class="ui search">
-                    <input
-                        class="prompt"
-                        type="text"
-                        placeholder="Entrez un nom, prénom..."
-                        id="infirmier"
-                    ></input>
+                <div class="accueil">
+                    <h2 class="ui medium header">
+                        Connaissez-vous le nom d'un infirmier ?
+                    </h2>
 
-                    <div class="results"></div>
+                    <button class="ui inverted blue button oui">Oui</button>
+
+                    <button class="ui inverted blue button non">Non</button>
                 </div>
-            </div>
 
-            <button class="ui inverted pink button rdv">Prendre un rendez-vous</button>
-        </div>
+                <div class="ui form connu">
+                    <h2 class="ui medium header">
+                        Entrez son nom ou son prénom et laissez-vous guider...
+                    </h2>
 
-        <div class="ui form chercher">
-            <form>
-            <h2 class="ui medium header">Entrez vos coordonnées et vos besoins et laissez-vous guider...</h2>
-            <div class="field">
-                <label>Votre code postal</label>
+                    <div class="field">
+                        <div class="ui search">
+                            <input
+                                class="prompt"
+                                type="text"
+                                placeholder="Entrez un nom, prénom..."
+                                id="infirmier"
+                            ></input>
 
-                <input type="text" name="codepostal"></input>
-            </div>
+                            <div class="results"></div>
+                        </div>
+                    </div>
 
-            <div class="field" id="soins_demandes">
-                <label>Soins recherchés</label>
+                    <button class="ui inverted pink button rdv">Prendre un rendez-vous</button>
+                </div>
 
-                <select
-                    multiple=""
-                    class="ui dropdown"
-                    name="soins"
-                >
-                    <option value="piqures">Piqures</option>
+                <div class="ui form chercher">
+                    <form>
+                        <h2 class="ui medium header">
+                            Entrez vos coordonnées et vos besoins et laissez-vous guider...
+                        </h2>
 
-                    <option value="pansements">Pansements</option>
+                        <div class="field">
+                            <label>Votre code postal</label>
 
-                    <option value="perfusions">Perfusions</option>
+                            <input
+                                type="text"
+                                name="codepostal"
+                            ></input>
+                        </div>
 
-                    <option value="aérosol">Aérosol</option>
-                </select>
-            </div>
+                        <div
+                            class="field"
+                            id="soins_demandes"
+                        >
+                            <label>Soins recherchés</label>
 
-            <div class="grouped fields" id="preference">
-                <label for="genre">
-                    Préférez-vous que votre infirmier soit un homme ou une femme ?
-                </label>
+                            <select
+                                multiple=""
+                                class="ui dropdown"
+                                name="soins"
+                            >
+                                <option value="piqures">Piqures</option>
 
-                <div class="field">
-                    <div class="ui radio checkbox">
-                        <input
-                            type="radio"
-                            name="genre"
-                            checked=""
-                            tabindex="0"
-                            class="hidden"
-                            value=false
-                        ></input>
+                                <option value="pansements">Pansements</option>
 
-                        <label>Homme</label>
+                                <option value="perfusions">Perfusions</option>
+
+                                <option value="aérosol">Aérosol</option>
+                            </select>
+                        </div>
+
+                        <div
+                            class="grouped fields"
+                            id="preference"
+                        >
+                            <label for="genre">
+                                Préférez-vous que votre infirmier soit un homme ou une femme ?
+                            </label>
+
+                            <div class="field">
+                                <div class="ui radio checkbox">
+                                    <input
+                                        type="radio"
+                                        name="genre"
+                                        checked=""
+                                        tabindex="0"
+                                        class="hidden"
+                                        value="false"
+                                    ></input>
+
+                                    <label>Homme</label>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="ui radio checkbox">
+                                    <input
+                                        type="radio"
+                                        name="genre"
+                                        tabindex="0"
+                                        class="hidden"
+                                        value="true"
+                                    ></input>
+
+                                    <label>Femme</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label>Votre adresse e-mail</label>
+
+                            <input
+                                type="email"
+                                name="email"
+                            ></input>
+                        </div>
+
+                        <button
+                            class="ui submit inverted pink button affichage"
+                            type="submit"
+                        >Chercher</button>
+
+                        <div class="ui error message"></div>
+                    </form>
+                </div>
+
+                <div class="ui modal ok">
+                    <div class="header">
+                        Vous venez de prendre rendez-vous avec
+
+                        <span class="resultat"></span>
                     </div>
                 </div>
 
-                <div class="field">
-                    <div class="ui radio checkbox">
-                        <input
-                            type="radio"
-                            name="genre"
-                            tabindex="0"
-                            class="hidden"
-                            value=true
-                        ></input>
-
-                        <label>Femme</label>
+                <div class="ui modal erreur">
+                    <div class="header">
+                        Aucune personne de ce nom n'a été trouvée, merci de réessayer.
                     </div>
                 </div>
+
+                <div class="ui basic modal liste">
+                    <div class="ui items"></div>
+                </div>
+
+                <div class="ui modal indisponible">
+                    <div class="header">Aucun infirmier disponible.</div>
+                </div>
             </div>
-
-            <div class="field">
-                <label>Votre adresse e-mail</label>
-
-                <input type="email" name="email"></input>
-            </div>
-
-            <button class="ui submit inverted pink button affichage" type="submit">Chercher</button>
-            <div class="ui error message"></div>
-            </form>
-        </div>
-
-        <div class="ui modal ok">
-            <div class="header">
-                Vous venez de prendre rendez-vous avec
-
-                <span class="resultat"></span>
-            </div>
-        </div>
-
-        <div class="ui modal erreur">
-            <div class="header">
-                Aucune personne de ce nom n'a été trouvée, merci de réessayer.
-            </div>
-        </div>
-
-        <div class="ui basic modal liste">
-        <div class="ui items">
-        </div>
-        </div>
-
-        <div class="ui modal indisponible">
-                <div class="header">
-                        Aucun infirmier disponible.
-                    </div>
-        </div>
-        </div>
-
         </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="semantic/dist/semantic.min.js"></script>
     <script src="code.js"></script>
-    </body>
+</body>
 </html>
