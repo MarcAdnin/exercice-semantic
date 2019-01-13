@@ -1,0 +1,22 @@
+
+.connu, .chercher{
+    display: none;
+}
+
+.ui.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+    flex-wrap: wrap;
+    background-image: url('images/background.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.ten.wide.middle.aligned{
+    background-color: white;
+    padding : 2rem;
+    border-radius: 10px;
+}
